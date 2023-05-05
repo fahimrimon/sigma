@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 
-function Header() {
-  return (
-    <div className='flex py-[10px] px-[10px] bg-white justify-between sticky top-0'>
+const Header = () => {
+    return (
+        <div className='flex py-[10px] px-[10px] bg-white justify-between sticky top-0'>
            
           <div className='flex'>
           <div className="avatar">
@@ -21,7 +21,7 @@ function Header() {
                 <img className='w-[25px] h-[25px] p-1 bg-yellow-400 rounded-full ' src="https://i.ibb.co/HrrNLPz/server.png" alt="support" />
             </div>
         </div>
-  )
-}
+    );
+};
 
-export default Header
+export default Header;
