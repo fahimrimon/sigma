@@ -36,10 +36,11 @@ const SignUp = () => {
                            
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="SignUp" />
+                            {/* <input className="btn btn-primary" type="submit" value="SignUp" /> */}
+                            <Link className="btn btn-primary" to="/home">SignUp</Link>
                         </div>
                     </form>
-                    <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
+                    <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/">Login</Link> </p>
                    
                 </div>
             </div>

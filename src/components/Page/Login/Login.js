@@ -1,8 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+// import { AuthContext } from '../../contexts/UserContext';
 
 const Login = () => {
 
+    // const { setUser,setLoading } = useContext(AuthContext);
+    const navigate = useNavigate();
+    const location = useLocation(); 
+    const from = location.state?.from?.pathname || '/'
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -13,6 +18,13 @@ const Login = () => {
             email,password
         }
         console.log(info)
+        const user={
+            name:'test',
+            uid:1
+        }
+        // setUser(user)
+        // setLoading(false)
+        navigate(from, {replace: true})
 
     }
 
@@ -38,7 +50,8 @@ const Login = () => {
                             </label>
                         </div>
                         <div className="form-control mt-6">
-                            <input className="btn btn-primary" type="submit" value="Login" />
+                            {/* <input className="btn btn-primary" type="submit" value="Login" /> */}
+                            <Link className="btn btn-primary" to="/home">Login</Link>
                         </div>
                     </form>
                     <p className='text-center'>New to rtx <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>

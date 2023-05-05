@@ -10,7 +10,7 @@ const Header = () => {
          <img className='w-[30px] h-[30px] rounded-full' src="https://media.licdn.com/dms/image/C560BAQH0FaeOknHxFg/company-logo_200_200/0/1670521590918?e=2147483647&v=beta&t=9T44WdyRvJBkJXI8dm7hhM1H8ukAUmLqozbaPluz2tM" alt="logo" /> 
          </div>
          </div>
-        <p className='font-bold text-[15px] ml-[10px]'>https://trx.pet</p>
+        <p className='font-bold text-[15px] ml-[10px]'>Md. Rashed</p>
 
           </div>
 
