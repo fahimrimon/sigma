@@ -1,7 +1,6 @@
 import React from 'react';
 import About from '../About';
 import Alern from '../Alern';
-import AmmountShow from '../AmmountShow';
 import Banner from '../Banner';
 import GlobalPartner from '../GlobalPartner';
 import Help from '../Help';
@@ -13,7 +12,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Alern></Alern>
+            {/* <Alern></Alern> */}
             <MainFunction></MainFunction>
             <Help></Help>
             {/* <AmmountShow></AmmountShow> */}
