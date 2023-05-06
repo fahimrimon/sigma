@@ -16,7 +16,7 @@ const Home = () => {
             <Alern></Alern>
             <MainFunction></MainFunction>
             <Help></Help>
-            <AmmountShow></AmmountShow>
+            {/* <AmmountShow></AmmountShow> */}
             <TronMillionair></TronMillionair>
             <PlatformData></PlatformData>
             <About></About>

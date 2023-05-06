@@ -7,6 +7,8 @@ import Mine from "../Page/Mine/Mine";
 import Share from "../Page/Share/Share";
 import SignUp from "../Page/SignUp/SignUp";
 import Trading from "../Page/Trading/Trading";
+import Deposit from "../Page/Deposit/Deposit.js"
+import Withdraw from "../Page/Withdraw/Withdraw";
 
 const router = createBrowserRouter(
     [
@@ -41,6 +43,14 @@ const router = createBrowserRouter(
             {
                 path:'/signup',
                 element:<SignUp></SignUp>
+            },
+            {
+                path:'/deposit',
+                element:<Deposit></Deposit>
+            },
+            {
+                path:'/withdraw',
+                element:<Withdraw></Withdraw>
             }
             ]
         }
