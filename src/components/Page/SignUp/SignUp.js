@@ -35,6 +35,13 @@ const SignUp = () => {
                             <input type="password" name='password' placeholder="password" className="input input-bordered" />
                            
                         </div>
+                        <div className="form-control">
+                            <label className="label">
+                                <span className="label-text">Refference</span>
+                            </label>
+                            <input type="text" name='refer' placeholder="Enter refer id" className="input input-bordered" />
+                           
+                        </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="SignUp" />
                         </div>

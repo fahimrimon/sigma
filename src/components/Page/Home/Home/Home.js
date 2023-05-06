@@ -13,7 +13,7 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <Alern></Alern>
+            {/* <Alern></Alern> */}
             <MainFunction></MainFunction>
             <Help></Help>
             <AmmountShow></AmmountShow>
