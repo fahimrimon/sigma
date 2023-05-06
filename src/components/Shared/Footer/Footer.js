@@ -10,7 +10,7 @@ const Footer = () => {
                 <p className='text-[13px]'>Home</p>
             </div>
             </Link>
-            
+{/*             
             <Link to='/trading'>
             <div className='flex flex-col justify-center items-center'>
                 <img className='w-[20px] h-[20px]'  src="https://w7.pngwing.com/pngs/754/150/png-transparent-financial-planner-business-graph-of-a-function-business-angle-text-people-thumbnail.png" alt="trading logo" />
@@ -27,19 +27,19 @@ const Footer = () => {
          </div>
                 <p className='text-[13px]'>Invest</p>
             </div>
-            </Link>
+            </Link> */}
 
            <Link to='/share'>
            <div className='flex flex-col justify-center items-center'>
                 <img  className='w-[20px] h-[20px]' src="https://freepngimg.com/download/social_media/62953-icons-media-share-computer-design-social-icon.png" alt="Share icon" />
-                <p className='text-[13px]'>Share</p>
+                <p className='text-[13px]'>Refer</p>
             </div>
             </Link>
            
            <Link to='/mine'>
            <div className='flex flex-col justify-center items-center'>
                 <img className='w-[20px] h-[20px]' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyCTbivzwipgFl1wPKPLBqNX64UF9aFZ7GUQ&usqp=CAU" alt="human icon" />
-                <p className='text-[13px]'>Mine</p>
+                <p className='text-[13px]'>Profile</p>
             </div>
             </Link>
         </div>
