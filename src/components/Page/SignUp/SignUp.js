@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const SignUp = () => {
+    const {createUser} = useContext(AuthContext);
 
     const handleSignUp = event => {
         event.preventDefault();
@@ -9,10 +11,17 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        const info = {
-            email,password
-        }
-        console.log(info)
+        createUser(email, password)
+        .then(result =>{
+            const user = result.user;
+            console.log(user);
+        })
+        .catch(err => console.log(err));
+
+        // const info = {
+        //     email,password
+        // }
+        // console.log(info)
 
     }
 
@@ -43,8 +52,8 @@ const SignUp = () => {
                            
                         </div>
                         <div className="form-control mt-6">
-                            {/* <input className="btn btn-primary" type="submit" value="SignUp" /> */}
-                            <Link className="btn btn-primary" to="/home">SignUp</Link>
+                            <input className="btn btn-primary" type="submit" value="SignUp" />
+                            {/* <Link className="btn btn-primary" to="/home">SignUp</Link> */}
                         </div>
                     </form>
                     <p className='text-center'>Already have an account? <Link className='text-orange-600 font-bold' to="/">Login</Link> </p>
