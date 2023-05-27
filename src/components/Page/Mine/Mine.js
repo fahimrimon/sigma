@@ -75,6 +75,7 @@ function Mine() {
       <div className='flex space-x-2 items-center'>
       <img className='h-10' src="https://i.ibb.co/wd4VZxm/chongzhi-1.png" alt="chongzhi-1"></img>
         <h2>Deposit</h2>
+        <h2>Depos</h2>
       </div>
       <div className='flex space-x-2 items-center'>
       <img className='h-10' src="https://i.ibb.co/xm79fd9/tikuan-1.png" alt="tikuan-1"></img>
