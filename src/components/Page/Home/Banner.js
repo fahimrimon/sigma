@@ -9,7 +9,7 @@ function Banner() {
                 <h2 className='mb-2'>Total Balance</h2>
                 <div className='flex items-center'>
                     <h2 className='font-bold text-3xl'>10000</h2>
-                    <h2 className='font-bold ml-2'>TRX</h2>
+                    <h2 className='font-bold ml-2'>BDT</h2>
                 </div>
                 {/* <h2 className='font-bold'><span className='text-3xl'>10000</span> <span className=''>TRX</span></h2> */}
             </div>

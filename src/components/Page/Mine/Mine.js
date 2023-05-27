@@ -7,24 +7,24 @@ function Mine() {
       "name":"Team",
       "img":"https://trx.pet/static/img/blue/myself/tuandui.png"
     },
-    {
-      "id":2,
-      "name":"Finance Records",
-      "img":"https://trx.pet/static/img/blue/myself/caiwu.png"
-    },
+    // {
+    //   "id":2,
+    //   "name":"Finance Records",
+    //   "img":"https://trx.pet/static/img/blue/myself/caiwu.png"
+    // },
     {
       "id":3,
       "name":"Investment Record",
       "img":"https://trx.pet/static/img/blue/myself/dengchu.png"
     },
-    {
-      "id":4,
-      "name":"Transfer to basic",
-      "img":"https://trx.pet/static/img/blue/myself/zhuanzhuang.png"
-    },
+    // {
+    //   "id":4,
+    //   "name":"Transfer to basic",
+    //   "img":"https://trx.pet/static/img/blue/myself/zhuanzhuang.png"
+    // },
     {
       "id":5,
-      "name":"Share",
+      "name":"Refer",
       "img":"https://trx.pet/static/img/blue/myself/yaoqing.png"
     },
     {
@@ -37,11 +37,11 @@ function Mine() {
       "name":"Modify login password",
       "img":"https://trx.pet/static/img/blue/myself/lpwd.png"
     },
-    {
-      "id":8,
-      "name":"Modify security password",
-      "img":"https://trx.pet/static/img/blue/myself/ipwd.png"
-    },
+    // {
+    //   "id":8,
+    //   "name":"Modify security password",
+    //   "img":"https://trx.pet/static/img/blue/myself/ipwd.png"
+    // },
     {
       "id":9,
       "name":"Logout",
@@ -55,7 +55,7 @@ function Mine() {
          <div className='flex justify-between items-center text-white'>
             <div className='pl-4 py-8'>
                 <div className='items-center'>
-                    <h2 className='font-bold text-2xl'>demo@gmail.com</h2>
+                    <h2 className='font-bold text-2xl'>mdmashud@gmail.com</h2>
                 </div>
                 {/* <h2 className='font-bold'><span className='text-3xl'>10000</span> <span className=''>TRX</span></h2> */}
             </div>
@@ -67,8 +67,8 @@ function Mine() {
     </div>
 
     <div className=''>
-         <h2 className='bg-teal-800 w-12 text-white rounded-xl mx-auto text-center'>VIP1</h2>
-         <h2 className='text-center'><span className='text-teal-600'>Total Balance：</span><span className='text-xl text-teal-800 font-bold'>10000</span> <span className='font-bold'>TRX</span></h2>
+         {/* <h2 className='bg-teal-800 w-12 text-white rounded-xl mx-auto text-center'>VIP1</h2> */}
+         <h2 className='text-center'><span className='text-teal-600'>Total Balance：</span><span className='text-xl text-teal-800 font-bold'>10000</span> <span className='font-bold'>BDT</span></h2>
     </div>
 
     <div className='flex lg:space-x-72 space-x-28 justify-center my-8'>
@@ -87,7 +87,7 @@ function Mine() {
       <div className='grid grid-cols-2 lg:grid-cols-3 text-center pb-12'>
         {
           serviceData.map((data) => (
-            <div className='bg-white rounded-lg pb-4'>
+            <div key={data.id} className='bg-white rounded-lg pb-4'>
                 <img className='mx-auto h-12 mt-2' src={data.img} alt="lirun"></img>
                 <h2 className='text-black mt-1'>{data.name}</h2>
             </div>

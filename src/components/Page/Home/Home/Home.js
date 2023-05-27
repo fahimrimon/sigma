@@ -1,7 +1,6 @@
 import React from 'react';
 import About from '../About';
 import Alern from '../Alern';
-import AmmountShow from '../AmmountShow';
 import Banner from '../Banner';
 import GlobalPartner from '../GlobalPartner';
 import Help from '../Help';
@@ -16,7 +15,7 @@ const Home = () => {
             {/* <Alern></Alern> */}
             <MainFunction></MainFunction>
             <Help></Help>
-            <AmmountShow></AmmountShow>
+            {/* <AmmountShow></AmmountShow> */}
             <TronMillionair></TronMillionair>
             <PlatformData></PlatformData>
             <About></About>
