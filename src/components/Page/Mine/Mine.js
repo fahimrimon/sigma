@@ -87,7 +87,7 @@ function Mine() {
       <div className='grid grid-cols-2 lg:grid-cols-3 text-center pb-12'>
         {
           serviceData.map((data) => (
-            <div className='bg-white rounded-lg pb-4'>
+            <div key={data.id} className='bg-white rounded-lg pb-4'>
                 <img className='mx-auto h-12 mt-2' src={data.img} alt="lirun"></img>
                 <h2 className='text-black mt-1'>{data.name}</h2>
             </div>
