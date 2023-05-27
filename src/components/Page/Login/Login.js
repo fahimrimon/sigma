@@ -1,12 +1,15 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
-import { Link} from 'react-router-dom';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const {signIn} = useContext(AuthContext);
-    // const navigate = useNavigate();
-    // const location = useLocation(); 
-    // const from = location.state?.from?.pathname || '/'
+    const navigate = useNavigate();
+    const location = useLocation(); 
+    const from = location.state?.from?.pathname || '/home'
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -16,6 +19,8 @@ const Login = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            form.reset();
+            navigate(from, {replace: true})
         })
         .catch(err => console.log(err));
 
@@ -30,7 +35,7 @@ const Login = () => {
         // // setUser(user)
         // // setLoading(false)
         // navigate(from, {replace: true})
-
+        toast('Login Successfull');
     }
 
     return (
@@ -53,6 +58,7 @@ const Login = () => {
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Login" />
+                            <ToastContainer />
                             {/* <Link className="btn btn-primary" to="/home">Login</Link> */}
                         </div>
                     </form>

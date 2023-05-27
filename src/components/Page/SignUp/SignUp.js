@@ -1,6 +1,8 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 const SignUp = () => {
     const {createUser} = useContext(AuthContext);
@@ -15,6 +17,8 @@ const SignUp = () => {
         .then(result =>{
             const user = result.user;
             console.log(user);
+            form.reset();
+            toast('You are successfully signup');
         })
         .catch(err => console.log(err));
 
@@ -53,6 +57,7 @@ const SignUp = () => {
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="SignUp" />
+                            <ToastContainer />
                             {/* <Link className="btn btn-primary" to="/home">SignUp</Link> */}
                         </div>
                     </form>

@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+  const handleLogOut = () =>{
+    logOut()
+    .then(() =>{})
+    .catch(err => console.log(err));
+  }
     return (
         <div className='flex py-[10px] px-[10px] bg-white justify-between sticky top-0'>
            
@@ -14,11 +22,14 @@ const Header = () => {
 
           </div>
 
-            <div className='flex'>
+            <div className='flex items-center'>
                 <div className='border flex items-center justify-center rounded-full px-1'><img className='w-[16px] h-[16px]' src="https://i.ibb.co/LPtrpLH/lang.png" alt="lang" border="0"></img>
                 <span className=' px-[10px] text-[12px] text-blue-600'>English</span></div>
                 <img className='w-[25px] h-[25px] bg-blue-400 p-1 mx-2 rounded-full' src="https://i.ibb.co/bR2KNML/bell.png" alt="alerm" />
-                <img className='w-[25px] h-[25px] p-1 bg-yellow-400 rounded-full ' src="https://i.ibb.co/HrrNLPz/server.png" alt="support" />
+                {/* <img className='w-[25px] h-[25px] p-1 bg-yellow-400 rounded-full ' src="https://i.ibb.co/HrrNLPz/server.png" alt="support" /> */}
+                {user?.uid ? <button onClick={handleLogOut}>logout</button> : ""
+
+                }
             </div>
         </div>
     );
