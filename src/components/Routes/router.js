@@ -10,6 +10,7 @@ import Trading from "../Page/Trading/Trading";
 import Deposit from "../Page/Deposit/Deposit.js"
 import Withdraw from "../Page/Withdraw/Withdraw";
 import PrivateRoute from "./PrivateRoute";
+import PhoneSignUp from "../Page/SignUp/PhoneSignUp/PhoneSignUp";
 
 const router = createBrowserRouter(
     [
@@ -52,6 +53,10 @@ const router = createBrowserRouter(
             {
                 path:'/withdraw',
                 element:<Withdraw></Withdraw>
+            },
+            {
+                path:'/phoneSignUp',
+                element:<PhoneSignUp></PhoneSignUp>
             }
             ]
         }

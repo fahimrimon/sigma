@@ -5,11 +5,11 @@ function MainFunction() {
   return (
     <div className='mx-2 mt-4'>
       <div className='grid grid-cols-2 lg:grid-cols-3 gap-4 text-center'>
-        <Link to="/deposit"><div className='bg-white rounded-lg'>
+        <Link to="/deposit"><div className='bg-white rounded-lg py-1'>
         <img className='mx-auto h-12 mt-2' src="https://i.ibb.co/jL1FBMP/chongzhi.png" alt="lirun"></img>
         <h2 className='text-black font-bold mt-1'>Deposit</h2>
         </div></Link>
-        <Link to="/withdraw"><div className='bg-white rounded-lg'>
+        <Link to="/withdraw"><div className='bg-white rounded-lg py-1'>
         <img className='mx-auto h-12 mt-2' src="https://i.ibb.co/DCVvTSf/tikuan.png" alt="huiyuan"></img>
         <h2 className='text-black font-bold mt-1'>Withdrawal</h2>
         </div></Link>
@@ -17,7 +17,7 @@ function MainFunction() {
         <img className='mx-auto h-12 mt-2' src="https://i.ibb.co/42yJGJd/yaoqing.png" alt="huiyuan"></img>
         <h2 className='text-black font-bold mt-1'>VIP</h2>
         </div> */}
-        <div className='bg-white rounded-lg'>
+        <div className='bg-white rounded-lg py-1'>
         <img className='mx-auto h-12 mt-2' src="https://i.ibb.co/rQCQXGn/tuandui.png" alt="lirun"></img>
         <h2 className='text-black font-bold mt-1'>Referer</h2>
         </div>

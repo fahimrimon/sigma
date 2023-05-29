@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='flex items-center py-[10px] px-[10px] bg-white justify-between sticky bottom-0'>
+        <div className='sticky bottom-0'>
+            <div className='flex items-center py-[10px] px-[10px] bg-white justify-between '>
            <Link to='/home'>
             <div className='flex flex-col justify-center items-center'>
                 <img className='w-[20px] h-[20px]'  src="https://cdn-icons-png.flaticon.com/512/1946/1946488.png" alt="home logo" />
@@ -42,6 +43,7 @@ const Footer = () => {
                 <p className='text-[13px]'>Profile</p>
             </div>
             </Link>
+        </div>
         </div>
     );
 };

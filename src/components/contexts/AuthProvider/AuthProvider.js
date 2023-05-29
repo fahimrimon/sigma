@@ -1,6 +1,6 @@
 import React, { createContext, useEffect, useState } from 'react'
 import app from '../../../firebase/firebase.config';
-import {createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut} from 'firebase/auth'
+import {RecaptchaVerifier, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPhoneNumber, signOut} from 'firebase/auth'
 
 
 export const AuthContext = createContext();
@@ -17,6 +17,12 @@ function AuthProvider({children}) {
     const signIn = (email, password) =>{
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
+    }
+
+    const setUpRecaptcha = (number) =>{
+        const recaptchaVarifier = new RecaptchaVerifier('recaptcha-container', {}, auth);
+        recaptchaVarifier.render();
+        return signInWithPhoneNumber(auth, number, recaptchaVarifier);
     }
 
     const logOut = () =>{
@@ -41,7 +47,8 @@ function AuthProvider({children}) {
        loading,
        createUser,
        signIn,
-       logOut
+       logOut,
+       setUpRecaptcha
     }
   return (
     <AuthContext.Provider value={authInfo}>

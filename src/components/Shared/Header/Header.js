@@ -27,7 +27,7 @@ const Header = () => {
                 <span className=' px-[10px] text-[12px] text-blue-600'>English</span></div>
                 <img className='w-[25px] h-[25px] bg-blue-400 p-1 mx-2 rounded-full' src="https://i.ibb.co/bR2KNML/bell.png" alt="alerm" />
                 {/* <img className='w-[25px] h-[25px] p-1 bg-yellow-400 rounded-full ' src="https://i.ibb.co/HrrNLPz/server.png" alt="support" /> */}
-                {user?.uid ? <button onClick={handleLogOut}>logout</button> : ""
+                {user?.uid ? <button className='font-semibold border text-blue-400 rounded-full px-2' onClick={handleLogOut}>logout</button> : ""
 
                 }
             </div>
