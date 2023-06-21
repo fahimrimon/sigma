@@ -144,7 +144,7 @@ const SignUp = () => {
                             </label>
                             <div>
                             <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" required className="input input-bordered w-full" />
-                            <button onClick={togglePasswordVisibility} className='-ml-12 text-sm text-primary'>
+                            <button onClick={togglePasswordVisibility} className='-ml-12 text-xs text-primary font-semibold'>
                             {showPassword ? 'Hide' : 'Show'}
                             </button>
                             </div>
