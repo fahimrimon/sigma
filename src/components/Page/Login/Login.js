@@ -14,20 +14,37 @@ const Login = () => {
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
-        const email = form.email.value;
+        const phone = form.phone.value;
         const password = form.password.value;
-        signIn(email, password)
-        .then(result =>{
-            const user = result.user;
-            console.log(user);
-            form.reset();
-            navigate(from, {replace: true})
-            toast('Login Successfull');
+        
+
+
+        fetch(`http://localhost:5000/loginUser?phone=${phone}&password=${password}`)
+        .then(res => res.json())
+        .then(data =>{
+            console.log('saved user',data);
+            alert('!LOGGED');
+            navigate('/home');
+        //    if( data.acknowledged ==='true'){
+        //     navigate('/home');
+        //    }
+         
         })
-        .catch(error => {
-            console.log(error);
-            setError(error.message);
-        })
+        .catch(e=>setError('Phone or password incorrect'))
+
+
+        // signIn(email, password)
+        // .then(result =>{
+        //     const user = result.user;
+        //     console.log(user);
+        //     form.reset();
+        //     navigate(from, {replace: true})
+        //     toast('Login Successfull');
+        // })
+        // .catch(error => {
+        //     console.log(error);
+        //     setError(error.message);
+        // })
 
     }
 
@@ -39,9 +56,9 @@ const Login = () => {
                     <form onSubmit={handleLogin} className="">
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Email</span>
+                                <span className="label-text">Phone</span>
                             </label>
-                            <input type="text" name='email' placeholder="email" required className="input lg:w-[500px] w-[300px]  input-bordered" />
+                            <input type="number" name='phone' placeholder="phone" required className="input lg:w-[500px] w-[300px]  input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">

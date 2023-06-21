@@ -38,7 +38,7 @@ const PhoneSignUp = () => {
         try{
             setError("");
             await confirmObj.confirm(otp);
-            navigate("/home");
+            navigate("/signup");
         }catch(error){
             setError(error.message);
         }
@@ -47,7 +47,7 @@ const PhoneSignUp = () => {
         <div className=''>
            <div className='my-64'>
                 <div className=" w-full shadow-2xl bg-base-100 py-12 card-body">
-                    <h1 className="text-3xl text-center font-bold mb-8">Login with Phone</h1>
+                    <h1 className="text-3xl text-center font-bold mb-8">Registration</h1>
                     <form onSubmit={getOtp} style={{display: !flag ? "block" : "none"}}>
                        <PhoneInput
                        className=''

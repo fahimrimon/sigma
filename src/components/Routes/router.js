@@ -9,7 +9,6 @@ import SignUp from "../Page/SignUp/SignUp";
 import Trading from "../Page/Trading/Trading";
 import Deposit from "../Page/Deposit/Deposit.js"
 import Withdraw from "../Page/Withdraw/Withdraw";
-import PrivateRoute from "./PrivateRoute";
 import PhoneSignUp from "../Page/SignUp/PhoneSignUp/PhoneSignUp";
 
 const router = createBrowserRouter(
@@ -18,9 +17,13 @@ const router = createBrowserRouter(
             path:'/',
             element : <Main></Main>,
             children:[
+            // {
+            //     path:'/home',
+            //     element:<PrivateRoute><Home></Home></PrivateRoute>
+            // },
             {
                 path:'/home',
-                element:<PrivateRoute><Home></Home></PrivateRoute>
+                element:<Home></Home>
             },
             {
                 path:'/trading',
@@ -32,18 +35,18 @@ const router = createBrowserRouter(
             },
             {
                 path:'/share',
-                element:<PrivateRoute><Share></Share></PrivateRoute>
+                element:<Share></Share>
             },
             {
                 path:'/mine',
-                element:<PrivateRoute><Mine></Mine></PrivateRoute>
+                element:<Mine></Mine>
             },
             {
-                path:'/',
+                path:'/login',
                 element:<Login></Login>
             },
             {
-                path:'/signup',
+                path:'/userInfo',
                 element:<SignUp></SignUp>
             },
             {
@@ -55,7 +58,7 @@ const router = createBrowserRouter(
                 element:<Withdraw></Withdraw>
             },
             {
-                path:'/phoneSignUp',
+                path:'/',
                 element:<PhoneSignUp></PhoneSignUp>
             }
             ]

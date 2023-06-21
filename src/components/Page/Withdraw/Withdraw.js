@@ -7,7 +7,39 @@ const Withdraw = () => {
     
     const handleLogin = event => {
         event.preventDefault();
-        
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        const amount = form.amount.value;
+        const method = form.method.value;
+        const withdrawNumber = form.withdrawNumber.value;
+
+        const withdrawInfo ={
+            email,
+            password,
+            amount,
+            method,
+            withdrawNumber
+        }
+
+        console.log(withdrawInfo);
+
+        fetch('http://localhost:5000/withdraw',{
+            method:'POST',
+            headers:{'content-type':'application/json'},
+            body:JSON.stringify(withdrawInfo)
+
+        })
+        .then(res => res.json())
+        .then(data =>{
+            console.log('saved withdraw',data);
+            form.reset()
+        })
+        .catch(e=>console.log(e))
+
+
+
+
     }
 
     return (
@@ -37,14 +69,14 @@ const Withdraw = () => {
                             <label className="label">
                                 <span className="label-text">Amount</span>
                             </label>
-                            <input type="number" name='email' placeholder="amount" className="input lg:w-[500px] w-[300px]  input-bordered" />
+                            <input type="number" name='amount' placeholder="amount" className="input lg:w-[500px] w-[300px]  input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Payment method</span>
                             </label>
                             {/* <input type="text" name='email' placeholder="email" className="input lg:w-[500px] w-[300px]  input-bordered" /> */}
-                            <select className="lg:w-[500px] w-[300px] bordered"  name="Bkash" id="cars">
+                            <select className="lg:w-[500px] w-[300px] bordered"  name="method" id="cars">
                                 <option value="Bkash">Bkash</option>
                                 <option value="Nagad">Nagad</option>
                                 <option value="DBBL">DBBL</option>
@@ -54,9 +86,9 @@ const Withdraw = () => {
 
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Transaction</span>
+                                <span className="label-text">Withdraw Number</span>
                             </label>
-                            <input type="password" name='password' placeholder="transaction" className="input input-bordered" />
+                            <input type="number" name='withdrawNumber' placeholder="Withdraw Number" className="input input-bordered" />
                            
                         </div>
                         
