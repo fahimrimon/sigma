@@ -38,7 +38,7 @@ const PhoneSignUp = () => {
         try{
             setError("");
             await confirmObj.confirm(otp);
-            navigate("/signup");
+            navigate("/userInfo");
         }catch(error){
             setError(error.message);
         }
