@@ -11,15 +11,18 @@ const Deposit = () => {
         const amount = form.amount.value;
         const method = form.method.value;
         const depositNumber = form.depositNumber.value;
+        const user = JSON.parse(sessionStorage.getItem('user'))
 
         const depositInfo ={
+            name:user.name,
+            phone:user.phone,
             amount,
             method,
             depositNumber
         }
         console.log(depositInfo);
         
-        fetch('http://localhost:5000/deposit',{
+        fetch('https://sigma-server-xi.vercel.app/deposit',{
             method:'POST',
             headers:{'content-type':'application/json'},
             body:JSON.stringify(depositInfo)

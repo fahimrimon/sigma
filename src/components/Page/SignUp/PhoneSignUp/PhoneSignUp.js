@@ -45,7 +45,7 @@ const PhoneSignUp = () => {
     }
     return (
         <div className=''>
-           <div className='my-64'>
+           <div className='my-56'>
                 <div className=" w-full shadow-2xl bg-base-100 py-12 card-body">
                     <h1 className="text-3xl text-center font-bold mb-8">Registration</h1>
                     <form onSubmit={getOtp} style={{display: !flag ? "block" : "none"}}>
@@ -75,6 +75,7 @@ const PhoneSignUp = () => {
                          <button className='px-3 py-1 bg-blue-500 text-white rounded-md' type='submit'>Verify OTP</button>
                        </div>
                     </form>
+                    <p className='text-center mt-4'>Already have an account? <Link className='text-orange-600 font-bold' to="/login">Login</Link> </p>
                 </div>
             </div>
         </div>

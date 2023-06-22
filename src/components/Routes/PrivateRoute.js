@@ -1,20 +1,21 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
-import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
+// import { AuthContext } from '../contexts/AuthProvider/AuthProvider';
 
 const PrivateRoute = ({children}) => {
-    const {user, loading} = useContext(AuthContext);
+    // const {user, loading} = useContext(AuthContext);
     const location = useLocation();
+    const user = JSON.parse(sessionStorage.getItem('user'))
 
-    if(loading){
-        console.log('yes loading found');
-        return <progress className="progress w-56"></progress>
-    }
+    // if(loading){
+    //     console.log('yes loading found');
+    //     return <progress className="progress w-56"></progress>
+    // }
 
     if(user) {
         return children;
     }
-    return <Navigate to='/' state={{ from: location }} replace ></Navigate>
+    return <Navigate to='/login' state={{ from: location }} replace ></Navigate>
 };
 
 export default PrivateRoute;

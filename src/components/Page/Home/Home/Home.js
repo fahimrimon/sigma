@@ -9,6 +9,8 @@ import PlatformData from '../PlatformData';
 import TronMillionair from '../TronMillionair';
 
 const Home = () => {
+   const user = JSON.parse(sessionStorage.getItem('user'))
+    console.log(user)
     return (
         <div>
             <Banner></Banner>

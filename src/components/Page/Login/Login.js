@@ -7,6 +7,7 @@ import { ToastContainer, toast } from 'react-toastify';
 const Login = () => {
     const {signIn} = useContext(AuthContext);
     const [error, setError] = useState('');
+    const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
     const location = useLocation(); 
     const from = location.state?.from?.pathname || '/home'
@@ -19,11 +20,11 @@ const Login = () => {
         
 
 
-        fetch(`http://localhost:5000/loginUser?phone=${phone}&password=${password}`)
+        fetch(`https://sigma-server-xi.vercel.app/loginUser?phone=${phone}&password=${password}`)
         .then(res => res.json())
         .then(data =>{
             console.log('saved user',data);
-            alert('!LOGGED');
+            sessionStorage.setItem('user',JSON.stringify(data))
             navigate('/home');
         //    if( data.acknowledged ==='true'){
         //     navigate('/home');
@@ -48,6 +49,10 @@ const Login = () => {
 
     }
 
+    const togglePasswordVisibility = () => {
+        setShowPassword(!showPassword);
+      };
+
     return (
         <div className="hero min-h-screen w-full">
             <div>
@@ -64,7 +69,12 @@ const Login = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" required className="input input-bordered" />
+                            <div>
+                            <input type={showPassword ? 'text' : 'password'} name='password' placeholder="password" required className="input input-bordered w-full" />
+                            <button onClick={togglePasswordVisibility} className='-ml-12 text-xs text-primary font-semibold'>
+                            {showPassword ? 'Hide' : 'Show'}
+                            </button>
+                            </div>
                         </div>
                         <div className="form-control mt-6">
                             <input className="btn btn-primary" type="submit" value="Login" />
@@ -72,14 +82,14 @@ const Login = () => {
                             {/* <Link className="btn btn-primary" to="/home">Login</Link> */}
                         </div>
                     </form>
-                    <p className='text-center'>New to Sigma? <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </p>
+                    <p className='text-center'>New to Sigma? <Link className='text-orange-600 font-bold' to="/">Sign Up</Link> </p>
                     <p className='text-error text-center'>{error}</p>
-                    <div className="divider">OR</div>
+                    {/* <div className="divider">OR</div>
                     <Link to='/phoneSignUp'>
                     <button
                         className="bg-green-400 w-full py-2 rounded-full font-semibold text-sm uppercase"
                     >Sign in with Phone</button>
-                        </Link>
+                        </Link> */}
                 </div>
             </div>
         </div>

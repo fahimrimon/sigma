@@ -13,8 +13,10 @@ const Withdraw = () => {
         const amount = form.amount.value;
         const method = form.method.value;
         const withdrawNumber = form.withdrawNumber.value;
-
+        const user = JSON.parse(sessionStorage.getItem('user'))
         const withdrawInfo ={
+            name:user.name,
+            phone:user.phone,
             email,
             password,
             amount,
@@ -24,7 +26,7 @@ const Withdraw = () => {
 
         console.log(withdrawInfo);
 
-        fetch('http://localhost:5000/withdraw',{
+        fetch('https://sigma-server-xi.vercel.app/withdraw',{
             method:'POST',
             headers:{'content-type':'application/json'},
             body:JSON.stringify(withdrawInfo)

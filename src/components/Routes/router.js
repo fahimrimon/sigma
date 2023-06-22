@@ -10,6 +10,7 @@ import Trading from "../Page/Trading/Trading";
 import Deposit from "../Page/Deposit/Deposit.js"
 import Withdraw from "../Page/Withdraw/Withdraw";
 import PhoneSignUp from "../Page/SignUp/PhoneSignUp/PhoneSignUp";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter(
     [
@@ -23,7 +24,7 @@ const router = createBrowserRouter(
             // },
             {
                 path:'/home',
-                element:<Home></Home>
+                element:<PrivateRoute><Home></Home></PrivateRoute>
             },
             {
                 path:'/trading',
@@ -35,11 +36,11 @@ const router = createBrowserRouter(
             },
             {
                 path:'/share',
-                element:<Share></Share>
+                element:<PrivateRoute><Share></Share></PrivateRoute>
             },
             {
                 path:'/mine',
-                element:<Mine></Mine>
+                element:<PrivateRoute><Mine></Mine></PrivateRoute>
             },
             {
                 path:'/login',
